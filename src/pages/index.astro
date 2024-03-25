@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Bagde from "../components/Bagde.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GitHub from "../components/icons/GitHub.astro";
+import Experience from "../components/Experience.astro";
+import MailIcon from "../components/icons/Mail.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+		<SectionContainer>
 			<h1
 				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
 			>
@@ -37,7 +40,14 @@ import GitHub from "../components/icons/GitHub.astro";
 					<GitHub class="size-6" />
 					GitHub
 				</SocialPill>
+				<SocialPill href="mailto:joangsmassanet@gmail.com">
+					<MailIcon class="size-4" />
+					Contáctame
+				  </SocialPill>
 			</nav>
+		</section>
+		<section>
+			<Experience />
 		</section>
 	</main>
 </Layout>
