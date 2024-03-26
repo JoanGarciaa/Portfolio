@@ -8,11 +8,12 @@ import SocialPill from "../components/SocialPill.astro";
 import GitHub from "../components/icons/GitHub.astro";
 import Experience from "../components/Experience.astro";
 import MailIcon from "../components/icons/Mail.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<SectionContainer>
+		<SectionContainer class="py-44 pb-20">
 			<h1
 				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
 			>
@@ -32,7 +33,9 @@ import MailIcon from "../components/icons/Mail.astro";
 				tecnología y la programación. Girona, España
 			</h2>
 			<nav class="flex gap-x-4 mt-8">
-				<SocialPill href="https://www.linkedin.com/in/joan-garcia-80b899264/">
+				<SocialPill
+					href="https://www.linkedin.com/in/joan-garcia-80b899264/"
+				>
 					<LinkedIn class="size-6" />
 					LinkedIn
 				</SocialPill>
@@ -43,11 +46,17 @@ import MailIcon from "../components/icons/Mail.astro";
 				<SocialPill href="mailto:joangsmassanet@gmail.com">
 					<MailIcon class="size-4" />
 					Contáctame
-				  </SocialPill>
+				</SocialPill>
 			</nav>
-		</section>
-		<section>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Briefcase class="size-6" />
+				Experienca laboral
+			</h2>
+
 			<Experience />
-		</section>
+		</SectionContainer>
 	</main>
 </Layout>
