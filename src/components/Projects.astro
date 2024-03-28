@@ -1,0 +1,116 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Nodejs from "./icons/Nodejs.astro"
+import Link from "./icons/Link.astro"
+import Firebase from "./icons/Firebase.astro"
+import Kotlin from "./icons/Kotlin.astro"
+import Flutter from "./icons/Flutter.astro"
+import Angular from "./icons/Angular.astro"
+
+
+const TAGS = {
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-black text-white",
+    icon: Flutter,
+  },
+  KOTLIN: {
+    name: "Kotlin ",
+    class: "bg-[#003159] text-white",
+    icon: Kotlin,
+  },
+  NODEJS: {
+    name: "Nodejs",
+    class: "bg-[#003159] text-white",
+    icon: Nodejs,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#003159] text-white",
+    icon: Angular,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#003159] text-white",
+    icon: Firebase,
+  },
+}
+const PROJECTS = [
+  {
+    title: "SimBank",
+    description:
+      "Aplicación móvil que simula el funcionamiento de una cuenta bancaria. Creada con Kotlin y Android Studio. Arquitectura MVVM y Clean Architecture. Inyección de dependéncias con dagger hilt. Uso de coroutines y Flow. Aplicación publicada en Google Play Store. Proyecto de DAM",
+    link: "",
+    github: "https://github.com/f1nga/SIM_BANK",
+    image: "",
+    tags: [TAGS.FIREBASE, TAGS.KOTLIN],
+  },
+  {
+    title: "T-Versus",
+    description:
+      "Aplicación web y móvil para la creación y gestión de torneos de Valorant. Creada con Kotlin, Angular, Node y Firebase. Arquitectura MVVM. Uso de endpotins REST y conexión a base de datos en FireStore. Diferentes roles de usuarios como administrador y jugador.",
+    link: "https://github.com/JoanGarciaa/T-Versus",
+    image: "",
+    tags: [TAGS.FIREBASE, TAGS.KOTLIN, TAGS.ANGULAR, TAGS.NODEJS],
+  },
+  {
+    title: "Dream Garaje",
+    description:
+      "Aplicación móvil que sirve para comparar y crear garajes de coches. Creada con Flutter y Android Studio. Arquitectura MVVM y Clean Architecture. Inyección de dependéncias. Servicios Firebase como autenticación y base de datos. Uso de provider para la gestión de estados. Diferentes permisos de usuario dependiende de plan premium o basico. Simulación de carrera de coches.",
+    link: "https://github.com/JoanGarciaa/FlutterApp",
+    image: "",
+    tags: [TAGS.FIREBASE, TAGS.FLUTTER],
+  },
+  {
+    title: "Cafeteria",
+    description:
+      "Primer proyecto móvil. Aplicación que simula el funcionamiento de una cafeteria. Creada con Kotlin y Android Studio. Arquitectura MVC. Uso de RecyclerView, Fragments y listeners. ",
+    link: "https://github.com/JoanGarciaa/CafeteriaNoHands",
+    image: "",
+    tags: [TAGS.KOTLIN],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt=" Captura del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+
+     
+
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+
