@@ -1,13 +1,12 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Nodejs from "./icons/Nodejs.astro"
-import Link from "./icons/Link.astro"
-import Firebase from "./icons/Firebase.astro"
-import Kotlin from "./icons/Kotlin.astro"
-import Flutter from "./icons/Flutter.astro"
-import Angular from "./icons/Angular.astro"
-
+import GitHub from "./icons/GitHub.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Nodejs from "./icons/Nodejs.astro";
+import Link from "./icons/Link.astro";
+import Firebase from "./icons/Firebase.astro";
+import Kotlin from "./icons/Kotlin.astro";
+import Flutter from "./icons/Flutter.astro";
+import Angular from "./icons/Angular.astro";
 
 const TAGS = {
   FLUTTER: {
@@ -35,7 +34,7 @@ const TAGS = {
     class: "bg-[#400c0c] text-white",
     icon: Firebase,
   },
-}
+};
 const PROJECTS = [
   {
     title: "SimBank",
@@ -44,21 +43,22 @@ const PROJECTS = [
     link: "",
     github: "https://github.com/f1nga/SIM_BANK",
     image: "",
-    tags: [TAGS.KOTLIN,TAGS.FIREBASE],
+    tags: [TAGS.KOTLIN, TAGS.FIREBASE],
   },
   {
     title: "T-Versus",
     description:
       "Aplicación web y móvil para la creación y gestión de torneos de Valorant. Creada con Kotlin, Angular, Node y Firebase. Arquitectura MVVM. Uso de endpotins REST y conexión a base de datos en FireStore. Diferentes roles de usuarios como administrador y jugador.",
-    link: "https://github.com/JoanGarciaa/T-Versus",
+    GitHub: "https://github.com/JoanGarciaa/T-Versus",
+    link:"",
     image: "",
-    tags: [TAGS.NODEJS,TAGS.ANGULAR],
+    tags: [TAGS.NODEJS, TAGS.ANGULAR],
   },
   {
     title: "Dream Garaje",
     description:
       "Aplicación móvil que sirve para comparar y crear garajes de coches. Creada con Flutter y Android Studio. Arquitectura MVVM y Clean Architecture. Inyección de dependéncias. Servicios Firebase como autenticación y base de datos. Uso de provider para la gestión de estados. Diferentes permisos de usuario dependiende de plan premium o basico. Simulación de carrera de coches.",
-    link: "https://github.com/JoanGarciaa/FlutterApp",
+    GitHub: "https://github.com/JoanGarciaa/FlutterApp",
     image: "",
     tags: [TAGS.FIREBASE, TAGS.FLUTTER],
   },
@@ -66,51 +66,64 @@ const PROJECTS = [
     title: "Cafeteria",
     description:
       "Primer proyecto móvil. Aplicación que simula el funcionamiento de una cafeteria. Creada con Kotlin y Android Studio. Arquitectura MVC. Uso de RecyclerView, Fragments y listeners. ",
-    link: "https://github.com/JoanGarciaa/CafeteriaNoHands",
+    GitHub: "https://github.com/JoanGarciaa/CafeteriaNoHands",
     image: "",
     tags: [TAGS.KOTLIN],
   },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt=" Captura del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt=" Captura del proyecto"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-
-     
-
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <a
+                  href={github}
+                  role="link"
+                  class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                >
+                  <GitHub class="size-6" />
+                  Code
+                </a>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
