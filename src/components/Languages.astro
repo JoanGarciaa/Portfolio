@@ -1,0 +1,29 @@
+---
+const LANGUAGES = [
+    {
+        name: "HTML",
+        img: "",
+    },
+    {
+        name: "CSS",
+        img: "",
+    },
+    {
+        name: "JavaScript",
+        img: "",
+    },
+    {
+        name: "Figma",
+        img: "",
+    },
+];
+---
+
+{
+LANGUAGES.map((lenguage) => (
+<li class="rounded-2xl group flex flex-col fle justify-center items-center">
+    <span class="text-sm w-full text-center">{lenguage.name}</span>
+</li>)
+)
+}
+
