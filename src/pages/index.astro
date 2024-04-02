@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Bagde from "../components/Bagde.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
@@ -13,11 +12,10 @@ import Projects from "../components/Projects.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import AboutMe from "../components/AboutMe.astro";
 import ProfileCheck from "../components/icons/ProfileCheck.astro";
-import Languages from "../components/Languages.astro";
 import Stack from "../components/Stack.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Portfolio Joan Garcia">
 	<main class="px-4">
 		<SectionContainer class="py-24 md:pb-36">
 			<h1
@@ -88,6 +86,12 @@ import Stack from "../components/Stack.astro";
 			</SectionContainer>
 
 			<SectionContainer id="skills">
+				<h2
+					class="flex items-center  mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+				>
+				<CodeIcon class="size-7" />
+				Tecnologías
+				</h2>
 				<section class="grid grid-cols-2 gap-6">
 					<Stack></Stack>
 				</section>
